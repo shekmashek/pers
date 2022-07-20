@@ -1,0 +1,9 @@
+1.Modification de la table employers
+
+Supprimer les colonnes fonction_emp,poste_emp et Insérer les champs ci-dessous dans la table employers
+date_mariage,nationalite_id,status_matri_id,fonction_id ,categorie_emploi_id,salaire_id
+dans la bdd_suiviPersonnel_table_3
+
+
+Recréér le view stagiaires dans le view bdd_suiviPersonnel_view_0
+
