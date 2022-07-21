@@ -9,7 +9,7 @@
               <span class="nav-link active" id="compensation" data-bs-toggle="pill" data-bs-target="#compensation_salaire" type="button" role="tab" aria-controls="compensation_salaire" aria-selected="true">Compensation</span>
             </li>
             <li class="nav-item" role="presentation">
-              <span class="nav-link" id="historique_salaire" data-bs-toggle="pill" data-bs-target="#histo_salaire" type="button" role="tab" aria-controls="histo_salaire" aria-selected="false">Historique Salaire</span>
+              <span class="nav-link" id="historique_salaire" data-bs-toggle="pill" data-bs-target="#histo_salaire" type="button" role="tab" aria-controls="histo_salaire" aria-selected="false">Historique du salaire</span>
             </li>
         </ul>
         <div class="tab-content col-md-11 m-auto" id="pills-tabContent">
@@ -28,10 +28,12 @@
                                 <th>Champ</th>
                                 <th>Changé de</th>
                                 <th>Changé en</th>
+                                <th style="width:12%;">Variation en pourcentage</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

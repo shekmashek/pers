@@ -78,7 +78,7 @@
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Ajouter nouveau employé</h5>
@@ -87,25 +87,34 @@
             <form>
                 @csrf
                 <div class="modal-body">
-                    <div class="row col-md-12">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-9">
-                            <div class="mb-3 d-flex">
-                                <div class="col-md-6">
-                                    <label>Nom employé:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Prénom employé:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
+                    <div class="row col-md-11 m-auto">
+                        <div class="col-md-3 text-center">
+                            <img src="{{asset('img/userDefault.png')}}" alt="" style="border-radius:100%;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="nom_employe" id="nom_employe" placeholder="Nom d'employé">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="prenom_employe" id="prenom_employe" placeholder="Prénom d'employé">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" name="matricule_employe" id="matricule_employe" class="form-control" placeholder="Matricule d'employé">
+                            </div>
+                            <div class="mb-3">
+                                <select class="form-control">
+                                    <option selected>Sélectionnez une branche</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn text-white" style="background:#16B84E;">Enregistrer</button>
                 </div>
             </form>
           </div>

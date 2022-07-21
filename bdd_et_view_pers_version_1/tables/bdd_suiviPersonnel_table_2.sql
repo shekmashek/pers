@@ -27,8 +27,7 @@ CREATE TABLE `pers_personne_a_charges` (
 CREATE TABLE `pers_evenements`
 (
     `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `description` VARCHAR(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-    `date_changement` date NOT NULL
+    `description` VARCHAR(191) COLLATE utf8mb4_unicode_ci NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE `pers_status_matrimoniales`

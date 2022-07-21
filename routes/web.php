@@ -57,4 +57,6 @@ Route::get('/employe.liste',[HomeController::class,'liste_employe'])->name('empl
 
 Route::get('/salaire+employe',[HomeController::class,'salaire_employe'])->name('salaire');
 
+Route::get('/Carriere+emploi',[HomeController::class,'historique_emploi'])->name('emploi');
+
 require __DIR__.'/auth.php';

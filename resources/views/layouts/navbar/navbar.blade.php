@@ -8,7 +8,7 @@
             <div class="searchBoxMod d-flex flex-row py-2">
 
                 <div class="btn_racourcis me-4">
-                    <a href="" class="text-center emploi" role="button">
+                    <a href="{{route('emploi')}}" class="text-center emploi" role="button">
                         <span class="d-flex flex-column">
                             <i class='bx bx-briefcase-alt-2 mb-2 mt-1'></i>
                             <span class="text_racourcis">Emploi</span>
