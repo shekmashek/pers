@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employer;
+use App\Models\Genre;
+use App\Models\Nationalite;
+use App\Models\StatutMatrimoniale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -33,7 +36,7 @@ class HomeController extends Controller
             statut_emploi_stagiaire,nom_departement,nom_branche from v_employe where entreprise_id = ?', [ $etp_id]);
 
         }
-        return view('responsable.employe.liste',compact('employes'));
+        return view('responsable.employe.liste', compact('employes'));
     }
     public function salaire_employe(){
         return view('responsable.salaire_employe.detail_salaire');
@@ -42,4 +45,15 @@ class HomeController extends Controller
     public function historique_emploi(){
         return view('responsable.job_employe.detail_emplois');
     }
+
+    // Détails personnels
+    public function detailsPers() {
+
+        $genres = Genre::all();
+        $statutMatris = StatutMatrimoniale::all();
+        $nationalites = Nationalite::all();
+
+        return view('responsable.employe.details', compact('genres', 'nationalites', 'statutMatris'));        
+    }
+
 }

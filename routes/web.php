@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [HomeController::class,'index'])->name('dashboard');
 
-
 Route::get('/', function () {
     return view('index_accueil');
 })->name('accueil_perso');
@@ -58,5 +57,15 @@ Route::get('/employe.liste',[HomeController::class,'liste_employe'])->name('empl
 Route::get('/salaire+employe',[HomeController::class,'salaire_employe'])->name('salaire');
 
 Route::get('/Carriere+emploi',[HomeController::class,'historique_emploi'])->name('emploi');
+
+// Route détails personnels
+Route::get('/details_pers', [HomeController::class, 'detailsPers'])->name('details_pers');
+
+// Teste routages
+Route::middleware(['first', 'second'])->group(function () {
+    Route::get('/profile', function() {
+        return;
+    });
+});
 
 require __DIR__.'/auth.php';

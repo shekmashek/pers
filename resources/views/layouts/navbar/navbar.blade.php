@@ -32,7 +32,7 @@
                     </a>
                 </div>
                 <div class="btn_racourcis me-4">
-                    <a href="" class="text-center dossiers" role="button">
+                    <a href="{{ route('details_pers') }}" class="text-center dossiers" role="button">
                         <span class="d-flex flex-column">
                             <i class='bx bxs-user-detail mb-2 mt-1'></i>
                             <span class="text_racourcis">Dossiers</span>
