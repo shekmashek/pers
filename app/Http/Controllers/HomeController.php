@@ -6,6 +6,7 @@ use App\Models\Employer;
 use App\Models\Genre;
 use App\Models\Nationalite;
 use App\Models\StatutMatrimoniale;
+use App\Models\PersonneACharge;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -52,8 +53,10 @@ class HomeController extends Controller
         $genres = Genre::all();
         $statutMatris = StatutMatrimoniale::all();
         $nationalites = Nationalite::all();
+        $pers_a_charges = PersonneACharge::all();
 
-        return view('responsable.employe.details', compact('genres', 'nationalites', 'statutMatris'));        
+        return view('responsable.employe.details', compact('genres', 'nationalites', 
+        'statutMatris', 'pers_a_charges'));        
     }
 
 }
