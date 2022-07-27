@@ -218,10 +218,9 @@
     <div class="tab-pane fade" id="pills-profile" role="tabpanel"
     aria-labelledby="pills-profile-tab">
     <div class="col-md-12">
-        <button class="btn float-end text-white p-2" type="button"
-            style="background:#16B84E; border-radius:50%;" data-bs-toggle="modal" data-bs-target="#Modal_Pers_a_charge">
-            <i class='bx bx-plus-medical' style="fill: white;"></i>
-        </button>
+        <button class="btn float-end text-white" type="button" 
+        style="background:#16B84E;" data-bs-toggle="modal" data-bs-target="#Modal_Pers_a_charge">
+        <i class='bx bx-plus-medical'></i></button>
         <div class="table-responsive pt-2">
             <table class="table table-hover text-secondary" class="img-circle" style="font-size: .8rem;" >
                 <thead >
@@ -244,7 +243,7 @@
                                 {{ $pers_a_charge->prenom }}
                             </td>
                             <td>
-                                {{ $pers_a_charge->Date_naissance }}
+                                {{ $pers_a_charge->date_naissance }}
                             </td>
                             <td>
                                 {{ $pers_a_charge->relation }}
