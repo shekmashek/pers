@@ -148,6 +148,7 @@ $(document).ready(function() {
         }
         $('.text_header').empty().append(titre);
         $.post('/employe',{titre:titre},function(data){
+            $('#emploies_details').hide();
             $('.contenu').empty().append(data);
         });
     })

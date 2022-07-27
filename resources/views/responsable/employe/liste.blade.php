@@ -3,7 +3,7 @@
 <div class="text_header text-secondary">Liste d'employés</div>
 @endsection
 @section('content')
-    <div class="contenu">
+    <div id="emploies_details">
         <div class="col-md-12">
             <button class="btn float-end text-white" type="button" style="background:#16B84E;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class='bx bx-plus-medical'></i></button>
             <div class="table-responsive pt-2">
@@ -120,12 +120,16 @@
             </div>
         </div>
     </div>
-
+    <div class="contenu"></div>
     <script>
         $(document).ready(function(){
             $('.detail_employes').on('click',function(){
                 var employer_id = $(this).attr('id');
-                alert(employer_id);
+                var titre = "Dossiers";
+                $.post('/employe',{titre:titre,employer_id:employer_id},function(data){
+                    $('#emploies_details').hide();
+                    $('.contenu').empty().append(data);
+                });
             });
         });
     </script>
