@@ -61,4 +61,6 @@ Route::get('/Carriere+emploi',[HomeController::class,'historique_emploi'])->name
 // Route détails personnels
 Route::get('/details_pers', [HomeController::class, 'detailsPers'])->name('details_pers');
 
+Route::post('/ajout_pers_a_charge', [HomeController::class, 'store'])->name('charge_pers');
+
 require __DIR__.'/auth.php';
