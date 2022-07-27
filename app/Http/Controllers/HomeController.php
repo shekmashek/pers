@@ -73,33 +73,23 @@ class HomeController extends Controller
                     "statutMatris" => StatutMatrimoniale::all(),
                     "nationalites" => Nationalite::all(),
                     "pers_a_charges" => PersonneACharge::all()
+
                 ];
                 return view('responsable.employe.details')->with($data);
             }
         }
     }
 
-<<<<<<< HEAD
-    // Détails personnels
-    public function detailsPers(Request $request) {
 
-        $genres = Genre::all();
-        $statutMatris = StatutMatrimoniale::all();
-        $nationalites = Nationalite::all();
-        $pers_a_charges = PersonneACharge::all();
-
-        return view('responsable.employe.details', compact('genres', 'nationalites',
-        'statutMatris', 'pers_a_charges'));
-    }
     // Create detailsPers
     public function store(Request $request) {
 
         $insert = $request->all();
         PersonneACharge::create($insert);
-        return redirect('details_pers')->with('flash_message', 'Enrgistrer');
+        return back()->with('flash_message', 'Enrgistrer');
 
     }
 
-=======
->>>>>>> origin/interface_salaire
+
+
 }
