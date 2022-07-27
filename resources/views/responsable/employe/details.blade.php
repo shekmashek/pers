@@ -1,27 +1,24 @@
-@extends('layouts.master_page')
 
 <link rel="stylesheet" href="{{ asset('assets/css/personnels/details.css') }}">
-
-@section('content')
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" 
-        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" 
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
         aria-selected="true">Détails Personnels</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" 
-        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" 
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
         aria-selected="false">Personnels à charger</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" 
-        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" 
+        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
         aria-selected="false">Contact urgence</button>
     </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" 
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
     aria-labelledby="pills-home-tab">
     <div class="card p-3 text-secondary">
     <div class="row">
@@ -30,7 +27,7 @@
                 <label for="lastName" class="form-label label_form-1">
                     Prénom *
                 </label>
-                <input type="text" id="lastName" class="form-control input_form border-bottom p-0 pb-2" 
+                <input type="text" id="lastName" class="form-control input_form border-bottom p-0 pb-2"
                     placeholder="Jaqueline"
                 >
             </div>
@@ -40,7 +37,7 @@
                 <label for="firstName" class="form-label label_form-1">
                     Nom *
                 </label>
-                <input type="text" id="firstName" class="form-control input_form border-bottom p-0 pb-2" 
+                <input type="text" id="firstName" class="form-control input_form border-bottom p-0 pb-2"
                     placeholder="Wagner"
                 >
             </div>
@@ -50,7 +47,7 @@
                 <label for="idEmp" class="form-label label_form-1">
                     identification de l'employé
                 </label>
-                <input type="text" id="idEmp" class="form-control input_form border-bottom p-0 pb-2" 
+                <input type="text" id="idEmp" class="form-control input_form border-bottom p-0 pb-2"
                     placeholder="1020"
                 >
             </div>
@@ -75,7 +72,7 @@
                 <label for="naissance" class="form-label label_form-1">
                     Date de naissance
                 </label>
-                <input type="date" id="lastName" class="form-control input_form 
+                <input type="date" id="lastName" class="form-control input_form
                 text-secondary border-bottom p-0 pb-2">
             </div>
         </div>
@@ -108,7 +105,7 @@
         <div class="col-md-4">
             <div class="mb-3">
                 <label for="numberPermis" class="form-label label_form-1 mb-4"></label>
-                <input type="number" id="numberPermis" class="form-control input_form 
+                <input type="number" id="numberPermis" class="form-control input_form
                 text-secondary border-bottom p-0 pb-2" placeholder="Numéro de permis de conduire">
             </div>
         </div>
@@ -117,7 +114,7 @@
                 <label for="naissance" class="form-label label_form-1">
                     Date d'expiration de la licence
                 </label>
-                <input type="date" id="lastName" class="form-control input_form 
+                <input type="date" id="lastName" class="form-control input_form
                 text-secondary border-bottom p-0 pb-2">
             </div>
         </div>
@@ -145,12 +142,12 @@
             </label>
             <br />
             <div class="form-check form-check-inline radio-form">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" 
+                <input class="form-check-input" type="radio" name="inlineRadioOptions"
                 id="inlineRadio1" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Non</label>
             </div>
             <div class="form-check form-check-inline radio-form">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" 
+                <input class="form-check-input" type="radio" name="inlineRadioOptions"
                 id="inlineRadio2" value="option2">
                 <label class="form-check-label" for="inlineRadio2">Oui</label>
             </div>
@@ -174,22 +171,22 @@
             </label>
             <br />
             <div class="form-check radio-form mt-2">
-                <input class="form-check-input" type="radio" name="RadioOptions" 
+                <input class="form-check-input" type="radio" name="RadioOptions"
                 id="Antigene_A" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Antigène A</label>
             </div>
             <div class="form-check radio-form">
-                <input class="form-check-input" type="radio" name="RadioOptions" 
+                <input class="form-check-input" type="radio" name="RadioOptions"
                 id="Antigene_B" value="option2">
                 <label class="form-check-label" for="inlineRadio2">Antigène B</label>
             </div>
             <div class="form-check radio-form">
-                <input class="form-check-input" type="radio" name="RadioOptions" 
+                <input class="form-check-input" type="radio" name="RadioOptions"
                 id="Globule_R" value="option1">
                 <label class="form-check-label" for="inlineRadio1">Globule rouge</label>
             </div>
             <div class="form-check radio-form">
-                <input class="form-check-input" type="radio" name="RadioOptions" 
+                <input class="form-check-input" type="radio" name="RadioOptions"
                 id="Antigene_AB" value="option2">
                 <label class="form-check-label" for="inlineRadio2">Type AB</label>
             </div>
@@ -218,10 +215,10 @@
     </div>
 </div>
 </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" 
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
     aria-labelledby="pills-profile-tab">
     <div class="col-md-12">
-        <button class="btn float-end text-white p-2" type="button" 
+        <button class="btn float-end text-white p-2" type="button"
             style="background:#16B84E; border-radius:50%;" data-bs-toggle="modal" data-bs-target="#Modal_Pers_a_charge">
             <i class='bx bx-plus-medical' style="fill: white;"></i>
         </button>
@@ -265,16 +262,16 @@
         </div>
     </div>
 </div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" 
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel"
     aria-labelledby="pills-contact-tab">
 
 </div>
 </div>
 
 {{--
-Modale    
+Modale
 --}}
-<div class="modal text-secondary" id="Modal_Pers_a_charge" tabindex="-1" 
+<div class="modal text-secondary" id="Modal_Pers_a_charge" tabindex="-1"
     aria-labelledby="exampleModalLabel" aria-hidden="true"
     style="border-radius: 30%;"
     >
@@ -282,7 +279,7 @@ Modale
         <div class="modal-content">
             <div class="modal-header">
                 <h6 class="modal-title" id="exampleModalLabel">Ajouter une personne à charge</h6>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
                 aria-label="Close"></button>
             </div>
             <form action="{{ route('charge_pers') }}" method="POST">
@@ -293,21 +290,21 @@ Modale
                         <label for="firstName" class="form-label label_form-2">
                             Nom *
                         </label>
-                        <input type="text" id="firstName" name="nom" class="form-control 
+                        <input type="text" id="firstName" name="nom" class="form-control
                         input_form border-bottom p-0 pb-2">
                     </div>
                     <div class="mb-3">
                         <label for="firstName" class="form-label label_form-2">
                             Prénom *
                         </label>
-                        <input type="text" id="lastName" name="prenom" class="form-control 
+                        <input type="text" id="lastName" name="prenom" class="form-control
                         input_form border-bottom p-0 pb-2">
                     </div>
                     <div class="mb-3">
                         <label for="naissance" class="form-label label_form-2">
                             Date de naissance
                         </label>
-                        <input type="date" id="naissance" name="date_naissance" class="form-control 
+                        <input type="date" id="naissance" name="date_naissance" class="form-control
                         input_form border-bottom p-0 pb-2">
                     </div>
                     <div class="mb-3">
@@ -327,9 +324,9 @@ Modale
                     <div class="row col-md-12">
                         <p class="text-start col-md-2" style="font-size: 11px;">* Requis</p>
                         <div class="col-md-10 text-end">
-                            <button type="button" class="btn btn-danger" 
+                            <button type="button" class="btn btn-danger"
                             data-bs-dismiss="modal">Annuler</button>
-                            <button type="submit" class="btn text-white" 
+                            <button type="submit" class="btn text-white"
                             style="background:#16B84E;">Ajouter</button>
                         </div>
                     </div>
@@ -339,4 +336,3 @@ Modale
     </div>
 </div>
 
-@endsection

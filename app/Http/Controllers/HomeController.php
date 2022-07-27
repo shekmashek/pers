@@ -49,10 +49,10 @@ class HomeController extends Controller
     public function detail_historique_employe(Request $req)
     {
         $user_id = Auth::user()->id;
+        $employe_id = $req->employer_id;
         if (Gate::allows('isReferent')) {
             $etp_id = Employer::where('user_id',$user_id)->where('prioriter',1)->value('entreprise_id');
-            $employe_id = Employer::where('entreprise_id',$etp_id)->value('id');
-            dd($employe_id);
+
             if ($req->titre == "Emploi") {
                 $data = [
                     "titre"=>$req->titre
@@ -67,9 +67,19 @@ class HomeController extends Controller
                 return view('responsable.salaire_employe.detail_salaire')->with($data);
 
             }
+            else if($req->titre == "Dossiers"){
+                $data = [
+                    "genres" => Genre::all(),
+                    "statutMatris" => StatutMatrimoniale::all(),
+                    "nationalites" => Nationalite::all(),
+                    "pers_a_charges" => PersonneACharge::all()
+                ];
+                return view('responsable.employe.details')->with($data);
+            }
         }
     }
 
+<<<<<<< HEAD
     // Détails personnels
     public function detailsPers(Request $request) {
 
@@ -90,4 +100,6 @@ class HomeController extends Controller
 
     }
 
+=======
+>>>>>>> origin/interface_salaire
 }

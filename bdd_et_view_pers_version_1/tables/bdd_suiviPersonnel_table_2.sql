@@ -17,7 +17,7 @@ CREATE TABLE `pers_personne_a_charges` (
     `employer_id` bigint(20) UNSIGNED NOT NULL REFERENCES employers(id) ON DELETE CASCADE,
     `nom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
     `prenom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-    `Date_naissance` DATE NOT NULL,
+    `date_naissance` DATE NOT NULL,
     `relation` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
     `created_at` timestamp NULL DEFAULT  current_timestamp(),
   `updated_at` timestamp NULL DEFAULT  current_timestamp()
