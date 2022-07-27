@@ -71,7 +71,7 @@ class HomeController extends Controller
     }
 
     // Détails personnels
-    public function detailsPers() {
+    public function detailsPers(Request $request) {
 
         $genres = Genre::all();
         $statutMatris = StatutMatrimoniale::all();
@@ -80,6 +80,14 @@ class HomeController extends Controller
 
         return view('responsable.employe.details', compact('genres', 'nationalites',
         'statutMatris', 'pers_a_charges'));
+    }
+    // Create detailsPers
+    public function store(Request $request) {
+
+        $insert = $request->all();
+        PersonneACharge::create($insert);
+        return redirect('details_pers')->with('flash_message', 'Enrgistrer');
+
     }
 
 }

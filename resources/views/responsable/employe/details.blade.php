@@ -285,35 +285,36 @@ Modale
                 <button type="button" class="btn-close" data-bs-dismiss="modal" 
                 aria-label="Close"></button>
             </div>
-            <form>
+            <form action="{{ route('charge_pers') }}" method="POST">
                 @csrf
                 <div class="modal-body mx-2">
                     <div class="mb-3">
+                        <input type="hidden" id="id_charge_pers" name="employer_id" value="1">
                         <label for="firstName" class="form-label label_form-2">
                             Nom *
                         </label>
-                        <input type="text" id="firstName" class="form-control 
+                        <input type="text" id="firstName" name="nom" class="form-control 
                         input_form border-bottom p-0 pb-2">
                     </div>
                     <div class="mb-3">
                         <label for="firstName" class="form-label label_form-2">
                             Prénom *
                         </label>
-                        <input type="text" id="lastName" class="form-control 
+                        <input type="text" id="lastName" name="prenom" class="form-control 
                         input_form border-bottom p-0 pb-2">
                     </div>
                     <div class="mb-3">
                         <label for="naissance" class="form-label label_form-2">
                             Date de naissance
                         </label>
-                        <input type="date" id="naissance" class="form-control 
+                        <input type="date" id="naissance" name="date_naissance" class="form-control 
                         input_form border-bottom p-0 pb-2">
                     </div>
                     <div class="mb-3">
                         <label for="Etat" class="form-label label_form-2">
                             Relation *
                         </label>
-                        <select class="form-select input_form p-0 text-secondary">
+                        <select class="form-select input_form p-0 text-secondary" name="relation">
                             <option selected>--Selectionner--</option>
                             <option>Mari(e)</option>
                             <option>Parents</option>
@@ -326,8 +327,10 @@ Modale
                     <div class="row col-md-12">
                         <p class="text-start col-md-2" style="font-size: 11px;">* Requis</p>
                         <div class="col-md-10 text-end">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                            <button type="button" class="btn text-white" style="background:#16B84E;">Ajouter</button>
+                            <button type="button" class="btn btn-danger" 
+                            data-bs-dismiss="modal">Annuler</button>
+                            <button type="submit" class="btn text-white" 
+                            style="background:#16B84E;">Ajouter</button>
                         </div>
                     </div>
                 </div>

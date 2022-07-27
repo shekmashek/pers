@@ -9,4 +9,5 @@ class PersonneACharge extends Model
 {
     use HasFactory;
     protected $table = "pers_personne_a_charges";
+    protected $fillable = ["employer_id", "nom", "prenom", "date_naissance", "relation"];
 }
