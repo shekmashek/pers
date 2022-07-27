@@ -263,21 +263,71 @@
 </div>
     <div class="tab-pane fade" id="pills-contact" role="tabpanel"
     aria-labelledby="pills-contact-tab">
-
+    <div class="col-md-12">
+        <button class="btn float-end text-white" type="button" 
+        style="background:#16B84E;" data-bs-toggle="modal" data-bs-target="#Modal_Contact_urgence">
+        <i class='bx bx-plus-medical'></i></button>
+        <div class="table-responsive pt-2">
+            <table class="table table-hover text-secondary" class="img-circle" style="font-size: .8rem;" >
+                <thead >
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Relation</th>
+                        <th>Téléphone fixe</th>
+                        <th>Téléphone mobile</th>
+                        <th>Téléphone travail</th>
+                        <th>Date de création</th>
+                        <th>Date de modification</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    @foreach($contact_urgences as $contact_urgence)
+                        <tr class='my-5'>
+                            <td>
+                                {{ $contact_urgence->nom }}
+                            </td>
+                            <td>
+                                {{ $contact_urgence->prenom }}
+                            </td>
+                            <td>
+                                {{ $contact_urgence->relation }}
+                            </td>
+                            <td>
+                                {{ $contact_urgence->tel_fixe }}
+                            </td>
+                            <td>
+                                {{ $contact_urgence->tel_mobile }}
+                            </td>
+                            <td>
+                                {{ $contact_urgence->tel_travail }}
+                            </td>
+                            <td>
+                                {{ $pers_a_charge->created_at }}
+                            </td>
+                            <td>
+                                {{ $pers_a_charge->updated_at }}
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 </div>
 
 {{--
-Modale
+Modale-pers-charge
 --}}
 <div class="modal text-secondary" id="Modal_Pers_a_charge" tabindex="-1"
-    aria-labelledby="exampleModalLabel" aria-hidden="true"
+    aria-labelledby="pers_charge" aria-hidden="true"
     style="border-radius: 30%;"
     >
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="modal-title" id="exampleModalLabel">Ajouter une personne à charge</h6>
+                <h6 class="modal-title" id="pers_charge">Ajouter une personne à charge</h6>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                 aria-label="Close"></button>
             </div>
@@ -310,13 +360,100 @@ Modale
                         <label for="Etat" class="form-label label_form-2">
                             Relation *
                         </label>
-                        <select class="form-select input_form p-0 text-secondary" name="relation">
+                        <select class="form-select input_form mt-2 p-0 border-bottom text-secondary" name="relation">
                             <option selected>--Selectionner--</option>
                             <option>Mari(e)</option>
                             <option>Parents</option>
                             <option>Enfants</option>
                             <option>Autres</option>
                         </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row col-md-12">
+                        <p class="text-start col-md-2" style="font-size: 11px;">* Requis</p>
+                        <div class="col-md-10 text-end">
+                            <button type="button" class="btn btn-danger"
+                            data-bs-dismiss="modal">Annuler</button>
+                            <button type="submit" class="btn text-white"
+                            style="background:#16B84E;">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{--
+Modale-contact-urgence
+--}}
+<div class="modal text-secondary" id="Modal_Contact_urgence" tabindex="-1"
+    aria-labelledby="contact" aria-hidden="true"
+    style="border-radius: 30%;"
+    >
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="contact">Ajouter une contact urgence</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <form action="{{ route('contact_urgence') }}" method="POST">
+                @csrf
+                <div class="modal-body mx-2">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <input type="hidden" id="id_charge_pers" name="employer_id" value="1">
+                                <label for="firstName" class="form-label label_form-2">
+                                    Nom *
+                                </label>
+                                <input type="text" id="firstName" name="nom" class="form-control
+                                input_form border-bottom p-0 pb-2">
+                            </div>
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label label_form-2">
+                                    Prénom *
+                                </label>
+                                <input type="text" id="lastName" name="prenom" class="form-control
+                                input_form border-bottom p-0 pb-2">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Etat" class="form-label label_form-2">
+                                    Relation *
+                                </label>
+                                <select class="form-select input_form mt-2 p-0 text-secondary border-bottom" name="relation">
+                                    <option selected>--Selectionner--</option>
+                                    <option>Mari(e)</option>
+                                    <option>Parents</option>
+                                    <option>Enfants</option>
+                                    <option>Autres</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label for="naissance" class="form-label label_form-2">
+                                    Téléphone fixe
+                                </label>
+                                <input type="tel" id="naissance" name="tel_fixe" class="form-control
+                                input_form border-bottom p-0 pb-2">
+                            </div>
+                            <div class="mb-3">
+                                <label for="naissance" class="form-label label_form-2">
+                                    Téléphone mobile
+                                </label>
+                                <input type="tel" id="naissance" name="tel_mobile" class="form-control
+                                input_form border-bottom p-0 pb-2">
+                            </div>
+                            <div class="mb-3">
+                                <label for="naissance" class="form-label label_form-2">
+                                    Téléphone travail
+                                </label>
+                                <input type="tel" id="naissance" name="tel_travail" class="form-control
+                                input_form border-bottom p-0 pb-2">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -9,6 +9,7 @@ use App\Models\Genre;
 use App\Models\Nationalite;
 use App\Models\StatutMatrimoniale;
 use App\Models\PersonneACharge;
+use App\Models\ContactUrgence;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -67,12 +68,13 @@ class HomeController extends Controller
                 return view('responsable.salaire_employe.detail_salaire')->with($data);
 
             }
-            else if($req->titre == "Dossiers"){
+            else if($req->titre == "Dossiers") {
                 $data = [
                     "genres" => Genre::all(),
                     "statutMatris" => StatutMatrimoniale::all(),
                     "nationalites" => Nationalite::all(),
-                    "pers_a_charges" => PersonneACharge::all()
+                    "pers_a_charges" => PersonneACharge::all(),
+                    "contact_urgences" => ContactUrgence::all()
 
                 ];
                 return view('responsable.employe.details')->with($data);
@@ -82,14 +84,20 @@ class HomeController extends Controller
 
 
     // Create detailsPers
-    public function store(Request $request) {
+    public function storePersCharge(Request $request) {
 
         $insert = $request->all();
         PersonneACharge::create($insert);
-        return back()->with('flash_message', 'Enrgistrer');
+        return back();
 
     }
 
+    public function storeContactUrgence(Request $request) {
 
+        $insert = $request->all();
+        ContactUrgence::create($insert);
+        return back();
+
+    }
 
 }

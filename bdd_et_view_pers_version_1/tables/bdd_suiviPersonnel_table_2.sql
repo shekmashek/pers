@@ -5,8 +5,8 @@ CREATE TABLE `pers_contact_urgences` (
   `prenom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `relation` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tel_fixe` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tel_mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tel_travail` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tel_mobile` varchar(191) COLLATE utf8mb4_unicode_ci,
+  `tel_travail` varchar(191) COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT  current_timestamp(),
   `updated_at` timestamp NULL DEFAULT  current_timestamp()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
