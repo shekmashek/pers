@@ -7,6 +7,10 @@ use App\Models\Evenement;
 use App\Models\Devise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Genre;
+use App\Models\Nationalite;
+use App\Models\StatutMatrimoniale;
+use App\Models\PersonneACharge;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\DB;
 
@@ -84,4 +88,15 @@ class HomeController extends Controller
     // public function historique_emploi(){
 
     // }
+
+    public function detailsPers() {
+
+        $genres = Genre::all();
+        $statutMatris = StatutMatrimoniale::all();
+        $nationalites = Nationalite::all();
+        $pers_a_charges = PersonneACharge::all();
+
+        return view('responsable.employe.details', compact('genres', 'nationalites',
+        'statutMatris', 'pers_a_charges'));
+    }
 }
