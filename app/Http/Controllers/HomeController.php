@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Employer;
 use App\Models\Evenement;
 use App\Models\Devise;
+use App\Models\Genre;
+use App\Models\Nationalite;
+use App\Models\StatutMatrimoniale;
+use App\Models\PersonneACharge;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -40,7 +44,6 @@ class HomeController extends Controller
             return view('responsable.employe.liste')->with($data);
 
         }
-
     }
 
     public function detail_historique_employe(Request $req)
@@ -67,21 +70,16 @@ class HomeController extends Controller
         }
     }
 
-    public function nouveau_historique_salaire(Request $req)
-    {
-        $etp_id = Employer::where('user_id',Auth::user()->id)->where('prioriter',1)->value('entreprise_id');
+    // Détails personnels
+    public function detailsPers() {
 
+        $genres = Genre::all();
+        $statutMatris = StatutMatrimoniale::all();
+        $nationalites = Nationalite::all();
+        $pers_a_charges = PersonneACharge::all();
 
-
-
+        return view('responsable.employe.details', compact('genres', 'nationalites',
+        'statutMatris', 'pers_a_charges'));
     }
 
-    public function detail_personnel()
-    {
-        return view('responsable.employe.detail_pers');
-    }
-
-    // public function historique_emploi(){
-
-    // }
 }

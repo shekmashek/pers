@@ -1,0 +1,33 @@
+/* Géneral */
+.card .input_form {
+    border: none; 
+    font-size: 14px;
+}
+/* Détails personnels */
+.card .label_form-1 {
+    color: #ff0000; 
+    font-size: 11px;
+}
+.card p {
+    font-size: 13px;
+}
+.card .button-text {
+    background-color: #33cc00;
+}
+.card .button-text:hover {
+    background-color: #33cc33;
+}
+.card .radio-form {
+    font-size: 12px;
+}
+#Antigene_A, #Antigene_B, #Globule_R, #Antigene_AB {
+    border-radius: 0.2em;
+}
+/* Personnals à charger */
+.modal .label_form-2 { 
+    font-size: 13px;
+}
+.modal .input_form {
+    border: none; 
+    font-size: 14px;   
+}
