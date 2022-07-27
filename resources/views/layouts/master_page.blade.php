@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/styleGeneral.css')}}">
     <link rel="shortcut icon" href="{{asset('img/logos_all/iconPersonel.webp') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('assets/css/configAll.css')}}">
+    <script src="{{asset('js/admin.js')}}"></script>
     <style>
         .modal-backdrop{
             z-index: 1 !important;
@@ -79,8 +80,6 @@
     <script src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js"></script>
     <script src="https://cdn.datatables.net/scroller/2.0.7/js/dataTables.scroller.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="{{asset('js/admin.js')}}"></script>
-
 
     <script type="text/javascript">
         //Pour chaque div de classe randomColor

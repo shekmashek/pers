@@ -1098,3 +1098,8 @@ a{
 .dataTables_info{
     color: #999;
 }
+
+.card_salaire{
+    border-radius:20px;
+    background-color: #E8E7E6;
+}

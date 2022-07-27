@@ -19,3 +19,10 @@ CREATE TABLE pers_historique_fonctions (
   `created_at` timestamp NULL DEFAULT  current_timestamp(),
   `updated_at` timestamp NULL DEFAULT  current_timestamp()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `pers_evenements`( `id`, `description`) VALUES
+(1,'Changement du poste'),
+(2,'Augmentation de salaire'),
+(3,'Contrat initial'),
+(4,'Renouvelement de contrat'),
+(5,'Promu');

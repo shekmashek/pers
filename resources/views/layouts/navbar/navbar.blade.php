@@ -6,39 +6,39 @@
     <div class="col-5 align-items-center justify-content-start d-flex flex-row ">
         <div class="row">
             <div class="searchBoxMod d-flex flex-row py-2">
-
-                <div class="btn_racourcis me-4">
-                    <a href="{{route('emploi')}}" class="text-center emploi" role="button">
-                        <span class="d-flex flex-column">
-                            <i class='bx bx-briefcase-alt-2 mb-2 mt-1'></i>
-                            <span class="text_racourcis">Emploi</span>
-                        </span>
-                    </a>
-                </div>
-                <div class="btn_racourcis me-4">
-                    <a href="{{route('salaire')}}" class="text-center salaires" role="button">
-                        <span class="d-flex flex-column">
-                            <i class='bx bx-money mb-2 mt-1'></i>
-                            <span class="text_racourcis">Salaire</span>
-                        </span>
-                    </a>
-                </div>
-                <div class="btn_racourcis me-4">
-                    <a href="" class="text-center salaires" role="button">
-                        <span class="d-flex flex-column">
-                            <i class='bx bx-line-chart mb-2 mt-1'></i>
-                            <span class="text_racourcis">Sanction</span>
-                        </span>
-                    </a>
-                </div>
-                <div class="btn_racourcis me-4">
-                    <a href="" class="text-center dossiers" role="button">
+                <div class="btn_racourcis me-4 Dossiers">
+                    <a href="#" class="text-center" role="button">
                         <span class="d-flex flex-column">
                             <i class='bx bxs-user-detail mb-2 mt-1'></i>
                             <span class="text_racourcis">Dossiers</span>
                         </span>
                     </a>
                 </div>
+                <div class="btn_racourcis me-4 Emploi">
+                    <a href="#" class="text-center" role="button">
+                        <span class="d-flex flex-column">
+                            <i class='bx bx-briefcase-alt-2 mb-2 mt-1'></i>
+                            <span class="text_racourcis">Emploi</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="btn_racourcis me-4 Salaire">
+                    <a href="#"  class="text-center" role="button">
+                        <span class="d-flex flex-column">
+                            <i class='bx bx-money mb-2 mt-1'></i>
+                            <span class="text_racourcis">Salaire</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="btn_racourcis me-4 Sanction">
+                    <a href="#" class="text-center" role="button">
+                        <span class="d-flex flex-column">
+                            <i class='bx bx-line-chart mb-2 mt-1'></i>
+                            <span class="text_racourcis">Sanction</span>
+                        </span>
+                    </a>
+                </div>
+
 
             </div>
         </div>

@@ -51,12 +51,19 @@ Route::get('/tarifs', function () {
     return view('/tarif');
 });
 
-Route::get('condition_generale_de_vente', 'ConditionController@index')->name('condition_generale_de_vente');
+Route::get('condition_ge
++nerale_de_vente', 'ConditionController@index')->name('condition_generale_de_vente');
+
+Route::post('/employe',[HomeController::class,'detail_historique_employe'])->name('historique_employe');
 
 Route::get('/employe.liste',[HomeController::class,'liste_employe'])->name('employe.liste');
 
-Route::get('/salaire+employe',[HomeController::class,'salaire_employe'])->name('salaire');
+Route::post('/ajout_historique_salaire',[HomeController::class,'nouveau_historique_salaire'])->name('new_historique_salaire');
 
-Route::get('/Carriere+emploi',[HomeController::class,'historique_emploi'])->name('emploi');
+// Route::get('/salaire+employe',[HomeController::class,'salaire_employe'])->name('salaire');
+
+// Route::get('/Carriere+emploi',[HomeController::class,'historique_emploi'])->name('emploi');
+
+Route::get('/detail+personnel',[HomeController::class,'detail_personnel'])->name('detail_employe');
 
 require __DIR__.'/auth.php';

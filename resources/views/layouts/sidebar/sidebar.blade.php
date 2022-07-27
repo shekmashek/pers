@@ -1,7 +1,7 @@
 <div class="sidebar active">
     <ul class="nav nav_list mb-5" id="menu">
         <li>
-            <a href="" class="nav_linke" id="accueil">
+            <a href="{{route('dashboard')}}" class="nav_linke" id="accueil">
                 <i class="bx bxs-dashboard"></i>
                 <span class="links_name">Accueil</span>
             </a>

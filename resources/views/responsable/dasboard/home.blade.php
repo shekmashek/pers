@@ -1,7 +1,10 @@
 @extends('layouts.master_page')
 @section('title')
-
+<div class="text_header text-secondary">Acceuil</div>
 @endsection
 @section('content')
-    <h1>Dasboard responsable</h1>
+    <div class="contenu">
+
+    </div>
+
 @endsection

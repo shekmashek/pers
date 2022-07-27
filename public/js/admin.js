@@ -102,31 +102,57 @@ let afficherinfos = document.querySelector(".infos");
 let afficherfiltre = document.querySelector(".filtrer");
 let menu = document.querySelector(".bx-menu");
 
-  /* function afficherTuto() {
-        affichertuto.classList.toggle("afficher");
-    }*/
-
     function afficherInfos() {
         afficherinfos.classList.toggle("afficher");
     }
 
 function clickSidebar() {
     sidebar.classList.toggle("active");
-    // menu.classList.toggle("bx-menu-alt-right");
 }
-/*function afficherTuto() {
-    affichertuto.classList.toggle("afficher");
-}*/
 
 function afficherFiltre() {
     afficherfiltre.classList.toggle("afficher");
 }
 
 $(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
     $("ul li a").click(function() {
         $("li a").removeClass("active");
         $(this).addClass("active");
+
+        var titre = $(this).find('.links_name').text();
+        if(titre =="Acceuil"){
+            $('.text_header').empty().append(titre);
+        }else if(titre == "Employés"){
+            $('.text_header').empty().append("Liste d'employés");
+        }
+
+        // $.post('/employe.liste',{titre:titre},function(data){
+        //     $('.contenu').empty().append(data);
+        // });
+
     });
+
+    $('.btn_racourcis').on('click',function(){
+        var titre = $(this).find('.text_racourcis').text();
+        $('.btn_racourcis').removeClass('active');
+        if ($('.'+titre).data('clicked',true)) {
+            $(this).addClass('active');
+        } else {
+            $(this).removeClass('active');
+        }
+        $('.text_header').empty().append(titre);
+        $.post('/employe',{titre:titre},function(data){
+            $('.contenu').empty().append(data);
+        });
+    })
+
+
 });
 
 
